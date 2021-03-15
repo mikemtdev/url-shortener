@@ -1,0 +1,6 @@
+{
+  "name": "Food Waste Managment --Production",
+  "mail": {
+    "host": "production-mail-server"
+  }
+}
