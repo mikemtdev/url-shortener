@@ -16,6 +16,6 @@
   },
   "husky": {
     "pre-commit": "yarn run test",
-    "pre-push": "branch-naming-check '(main| dev)+-w[a-zA-Z]+-w[a-zA-Z]'"
+    "pre-push": "branch-naming-check '\b(main| dev)+-w[a-zA-Z]+-w[a-zA-Z]'"
   }
 }
