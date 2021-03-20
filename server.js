@@ -15,6 +15,7 @@ app.get('env') === 'development' &&
 
 // Routes Imports
 const shorturl = require('./app/routes/shorturl');
+const home = require('./app/routes/home');
 // Middlewares
 app.use(
   bodyParser.urlencoded({
@@ -23,6 +24,7 @@ app.use(
 );
 app.use(bodyParser.json());
 // configurations
+app.use('/', home);
 app.use('/shorturl', shorturl);
 
 // Get short url and redirects to actual url
