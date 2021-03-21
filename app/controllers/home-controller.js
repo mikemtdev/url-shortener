@@ -1,35 +1,7 @@
 const path = require('path');
 const shortUrl = require('../controllers/shorturl-controller');
-const logger = require('debug')('*');
-const user = {
-  userEmail: 'mikemnjovu@gmail.com',
-  userPassword: 1324,
-};
-const auth = (email, password) => {
-  if (email) {
-    if (password) {
-      if (email === user.userEmail) {
-        if (
-          user.userPassword == password
-        ) {
-          return true;
-        } else {
-          logger('Wrong password');
-          return;
-        }
-      } else {
-        logger('Wrong email');
-        return;
-      }
-    } else {
-      logger('No Password');
-      return;
-    }
-  } else {
-    logger('No email');
-    return;
-  }
-};
+
+const auth = require('../util/authentication');
 
 exports.home = (req, res, next) => {
   res.sendFile(
@@ -55,3 +27,5 @@ exports.homePost = (req, res, next) => {
 
   return next;
 };
+
+// module.exports = auth;
