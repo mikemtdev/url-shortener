@@ -23,6 +23,13 @@ exports.homePost = (req, res, next) => {
           `/app/views/${'shorturl'}.html`
       )
     );
+  } else {
+    res.sendFile(
+      path.join(
+        path.resolve() +
+          `/app/views/${'home'}.html`
+      )
+    );
   }
 
   return next;
