@@ -34,5 +34,3 @@ exports.homePost = (req, res, next) => {
 
   return next;
 };
-
-// module.exports = auth;

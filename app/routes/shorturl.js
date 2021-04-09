@@ -7,7 +7,7 @@ router.get(
   shortUrlController.shortUrl
 );
 router.post(
-  '/shorturlGen',
+  '/short_url_gen',
   shortUrlController.postUrl
 );
 

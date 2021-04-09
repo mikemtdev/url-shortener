@@ -1,9 +1,9 @@
 const path = require('path');
-
+const dbUrlPost = require('../data/connect-database');
 // TODO! rm arry and send to database!
-
-const url = [{ url: 'hsahdfdajkf' }];
-
+const urlConDebug = require('debug')(
+  '*'
+);
 exports.shortUrl = (req, res, next) => {
   res.sendFile(
     path.join(
@@ -11,10 +11,10 @@ exports.shortUrl = (req, res, next) => {
         `/app/views/${'shorturl'}.html`
     )
   );
+  return next;
 };
-
 exports.postUrl = (req, res, next) => {
-  url.push({ title: req.body.url });
+  dbUrlPost(req.body.url);
   res.send(req.body.url);
   return next;
 };
