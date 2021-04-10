@@ -1,12 +1,15 @@
 const mongoose = require('mongoose');
 
 const UrlSchema = mongoose.Schema({
-  url: String,
+  url: {
+    type: String,
+    required: true,
+  },
   clicks: Number,
   owner: String,
 });
 
-module.exports = mongoose.model(
+let UrlObject = (module.exports = mongoose.model(
   'UrlPost',
   UrlSchema
-);
+));

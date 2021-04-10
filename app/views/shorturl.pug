@@ -3,7 +3,20 @@ html
     head 
     body 
         form(action="/shorturl/short_url_gen" method="POST")
-            h4 Log In
+            h4 Generate A Short url
             input(type="url" name="url" id="url" placeholder="Enter url")
             br 
             button Generate
+        
+        table 
+            tr 
+            td Full url
+            td Short url
+
+            each link, i in fulllink 
+                    tr 
+                        td #{link.url} 
+                        td #{link._id}
+                        //- p. 
+                        //-     clicks
+                        //-     #{link.click}
